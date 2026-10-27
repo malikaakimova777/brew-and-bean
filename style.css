@@ -1,0 +1,1015 @@
+/* =========================
+   BREW & BEAN
+   Main styles
+   ========================= */
+
+/* 1. Basic reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5ebdd;
+    color: #4a3024;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #bd8655;
+    outline-offset: 4px;
+}
+
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+/* 2. Header and navigation */
+
+.site-header {
+    min-height: 5.5rem;
+    padding: 1rem 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background-color: #f5ebdd;
+    border-bottom: 1px solid rgba(74, 48, 36, 0.12);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+
+.logo span:first-child {
+    color: #b87c4a;
+}
+
+.logo .logo-dot {
+    color: #b87c4a;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+.main-nav a,
+.footer-nav a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.footer-nav a:hover {
+    color: #b87c4a;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #cbb9a4;
+    border-radius: 999px;
+    color: #4a3024;
+    background-color: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+
+/* 3. Shared buttons and headings */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-height: 3.2rem;
+    padding: 0.85rem 1.4rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    color: #fffaf3;
+    background-color: #4a3024;
+}
+
+.button-primary:hover {
+    background-color: #684633;
+}
+
+.eyebrow {
+    margin-bottom: 1rem;
+    color: #a66d42;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.section-pad {
+    padding: 6rem 8%;
+}
+
+.section-heading {
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.section-heading h2,
+.about-content h2 {
+    margin-bottom: 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.section-heading h2 span,
+.about-content h2 span,
+.hero h1 span {
+    color: #b87c4a;
+    font-style: italic;
+}
+
+.section-heading > p:last-child {
+    color: #79685a;
+}
+
+/* 4. Hero section */
+
+.hero {
+    min-height: 39rem;
+    padding: 5rem 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 36rem;
+}
+
+.hero h1 {
+    margin-bottom: 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 6vw, 5.7rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.02;
+}
+
+.hero-text {
+    max-width: 31rem;
+    margin-bottom: 1.8rem;
+    color: #79685a;
+    font-size: 1.05rem;
+}
+
+.hero-note {
+    margin-top: 1.3rem;
+    color: #8b796a;
+    font-size: 0.85rem;
+}
+
+.hero-art {
+    min-height: 27rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 48% 48% 44% 44%;
+    background-color: #ead7bf;
+    isolation: isolate;
+}
+
+.art-sun {
+    width: 13rem;
+    height: 13rem;
+    position: absolute;
+    top: 10%;
+    right: 14%;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: #d6a875;
+}
+
+.art-bean {
+    width: 3.2rem;
+    height: 4.5rem;
+    position: absolute;
+    border: 3px solid #4a3024;
+    border-radius: 50%;
+    background-color: #8d5737;
+    transform: rotate(35deg);
+}
+
+.art-bean::after {
+    content: "";
+    width: 2px;
+    height: 3.7rem;
+    position: absolute;
+    top: 0.2rem;
+    left: 50%;
+    background-color: #f5ebdd;
+    transform: rotate(15deg);
+}
+
+.bean-one {
+    top: 18%;
+    left: 12%;
+}
+
+.bean-two {
+    right: 10%;
+    bottom: 17%;
+    transform: rotate(-35deg) scale(0.75);
+}
+
+.art-sparkle {
+    position: absolute;
+    color: #8d5737;
+    font-size: 2.5rem;
+}
+
+.sparkle-one {
+    top: 17%;
+    right: 16%;
+}
+
+.sparkle-two {
+    bottom: 20%;
+    left: 13%;
+    font-size: 1.7rem;
+}
+
+.coffee-cup {
+    width: 12rem;
+    height: 10rem;
+    position: relative;
+    margin-top: 2rem;
+    border: 0.45rem solid #fffaf3;
+    border-radius: 1.2rem 1.2rem 3rem 3rem;
+    background-color: #c58c5b;
+    box-shadow: 0 1.3rem 2rem rgba(74, 48, 36, 0.18);
+    transform: rotate(-7deg);
+}
+
+.cup-coffee {
+    height: 1.1rem;
+    position: absolute;
+    top: -0.4rem;
+    right: -0.1rem;
+    left: -0.1rem;
+    border: 0.2rem solid #fffaf3;
+    border-radius: 50%;
+    background-color: #4a3024;
+}
+
+.cup-handle {
+    width: 3.5rem;
+    height: 4.3rem;
+    position: absolute;
+    top: 1.5rem;
+    right: -3rem;
+    z-index: -1;
+    border: 0.7rem solid #fffaf3;
+    border-left: 0;
+    border-radius: 0 50% 50% 0;
+}
+
+.cup-logo {
+    position: absolute;
+    top: 3.3rem;
+    right: 0;
+    left: 0;
+    color: #fffaf3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cup-steam {
+    width: 0.7rem;
+    height: 2.3rem;
+    position: absolute;
+    top: -3rem;
+    border-left: 3px solid #8d7968;
+    border-radius: 50%;
+    transform: rotate(12deg);
+}
+
+.steam-one {
+    left: 28%;
+}
+
+.steam-two {
+    left: 48%;
+    top: -3.5rem;
+}
+
+.steam-three {
+    left: 68%;
+}
+
+.art-caption {
+    position: absolute;
+    right: 0;
+    bottom: 1.5rem;
+    left: 0;
+    color: #684633;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-align: center;
+}
+
+/* 5. Menu cards */
+
+.menu-section {
+    background-color: #fffaf3;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-card {
+    padding: 1rem;
+    border: 1px solid #eadfd1;
+    border-radius: 1.4rem;
+    background-color: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(74, 48, 36, 0.08);
+}
+
+.drink-art {
+    min-height: 12rem;
+    margin-bottom: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.latte-art {
+    background-color: #ead6c0;
+}
+
+.espresso-art {
+    background-color: #d7c1aa;
+}
+
+.iced-art {
+    background-color: #e4e6d5;
+}
+
+.drink-cup {
+    font-size: 5rem;
+    filter: drop-shadow(0 0.5rem 0.5rem rgba(74, 48, 36, 0.15));
+}
+
+.drink-category {
+    margin-bottom: 0.4rem;
+    color: #a66d42;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.menu-card h3 {
+    margin-bottom: 0.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.menu-card > p:not(.drink-category) {
+    min-height: 3.2rem;
+    color: #79685a;
+    font-size: 0.9rem;
+}
+
+.drink-footer {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-top: 1px solid #eadfd1;
+}
+
+.price {
+    font-weight: 800;
+}
+
+.order-link {
+    color: #8b5735;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.menu-note {
+    margin-top: 1.5rem;
+    color: #79685a;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* 6. About section */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+}
+
+.about-art {
+    min-height: 24rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background-color: #e5d1b9;
+}
+
+.about-circle {
+    width: 16rem;
+    height: 16rem;
+    position: absolute;
+    border: 2px solid rgba(74, 48, 36, 0.25);
+    border-radius: 50%;
+}
+
+.about-bean {
+    position: absolute;
+    color: #684633;
+    font-size: 9rem;
+}
+
+.about-bean-one {
+    transform: translate(-2rem, -1rem) rotate(-30deg);
+}
+
+.about-bean-two {
+    transform: translate(2rem, 1rem) rotate(30deg);
+    color: #a66d42;
+}
+
+.about-stamp {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #4a3024;
+    border-radius: 50%;
+    color: #4a3024;
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transform: rotate(-10deg);
+}
+
+.about-content > p:not(.eyebrow) {
+    margin-bottom: 1rem;
+    color: #79685a;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.7rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #b87c4a;
+    color: #8b5735;
+    font-weight: 800;
+}
+
+/* 7. Contact section */
+
+.contact-section {
+    background-color: #ead7bf;
+}
+
+.contact-layout {
+    max-width: 68rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3rem;
+}
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.contact-info > p {
+    margin-bottom: 2rem;
+    color: #79685a;
+}
+
+.contact-detail {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.detail-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #f5ebdd;
+    font-size: 1.25rem;
+}
+
+.contact-detail p {
+    color: #79685a;
+    font-size: 0.95rem;
+}
+
+.contact-detail strong {
+    color: #4a3024;
+}
+
+.contact-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    border: 1px solid rgba(74, 48, 36, 0.1);
+    border-radius: 1.3rem;
+    background-color: #fffaf3;
+}
+
+.contact-form label {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d9c8b5;
+    border-radius: 0.7rem;
+    color: #4a3024;
+    background-color: #fff;
+}
+
+.contact-form textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9a8b7c;
+}
+
+.submit-button {
+    align-self: flex-start;
+    margin-top: 0.7rem;
+    cursor: pointer;
+}
+
+.form-status {
+    color: #386746;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.form-note {
+    color: #79685a;
+    font-size: 0.75rem;
+}
+
+/* 8. Footer */
+
+.site-footer {
+    padding: 3rem 8% 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #4a3024;
+    color: #f5ebdd;
+    text-align: center;
+}
+
+.footer-logo {
+    color: #fffaf3;
+}
+
+.site-footer > p {
+    color: #d9c8b5;
+    font-size: 0.9rem;
+}
+
+.footer-nav {
+    margin: 0.5rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.copyright {
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(245, 235, 221, 0.2);
+    font-size: 0.8rem !important;
+}
+
+/* 9. Dark theme */
+
+body.dark-theme {
+    background-color: #1e1b18;
+    color: #f5ebdd;
+}
+
+.dark-theme .site-header {
+    border-bottom-color: #40362f;
+    background-color: #1e1b18;
+}
+
+.dark-theme .theme-toggle {
+    border-color: #756354;
+    color: #f5ebdd;
+}
+
+.dark-theme .hero-text,
+.dark-theme .hero-note,
+.dark-theme .section-heading > p:last-child,
+.dark-theme .about-content > p:not(.eyebrow) {
+    color: #c6b7a7;
+}
+
+.dark-theme .hero-art {
+    background-color: #302923;
+}
+
+.dark-theme .art-caption {
+    color: #f5ebdd;
+}
+
+.dark-theme .menu-section {
+    background-color: #26211d;
+}
+
+.dark-theme .menu-card {
+    border-color: #4a3c31;
+    background-color: #302923;
+}
+
+.dark-theme .menu-card > p:not(.drink-category),
+.dark-theme .menu-note {
+    color: #c6b7a7;
+}
+
+.dark-theme .drink-footer {
+    border-top-color: #4a3c31;
+}
+
+.dark-theme .about-art {
+    background-color: #302923;
+}
+
+.dark-theme .about-circle {
+    border-color: rgba(245, 235, 221, 0.2);
+}
+
+.dark-theme .about-bean-one {
+    color: #c58c5b;
+}
+
+.dark-theme .about-bean-two {
+    color: #e0b58c;
+}
+
+.dark-theme .about-stamp {
+    border-color: #f5ebdd;
+    color: #f5ebdd;
+}
+
+.dark-theme .contact-section {
+    background-color: #302923;
+}
+
+.dark-theme .contact-info > p,
+.dark-theme .contact-detail p {
+    color: #c6b7a7;
+}
+
+.dark-theme .contact-detail strong {
+    color: #f5ebdd;
+}
+
+.dark-theme .detail-icon {
+    background-color: #4a3c31;
+}
+
+.dark-theme .contact-form {
+    border-color: #4a3c31;
+    background-color: #26211d;
+}
+
+.dark-theme .contact-form input,
+.dark-theme .contact-form textarea {
+    border-color: #625044;
+    color: #f5ebdd;
+    background-color: #302923;
+}
+
+.dark-theme .contact-form input::placeholder,
+.dark-theme .contact-form textarea::placeholder {
+    color: #b5a494;
+}
+
+.dark-theme .form-note {
+    color: #c6b7a7;
+}
+
+.dark-theme .button-primary {
+    color: #1e1b18;
+    background-color: #e0b58c;
+}
+
+.dark-theme .button-primary:hover {
+    background-color: #edc9a5;
+}
+
+.dark-theme .text-link,
+.dark-theme .order-link {
+    color: #e0b58c;
+}
+
+/* 10. Tablet layout */
+
+@media (max-width: 1023px) {
+    .site-header {
+        padding-right: 4%;
+        padding-left: 4%;
+        gap: 1rem;
+    }
+
+    .main-nav {
+        gap: 1rem;
+    }
+
+    .theme-label {
+        display: none;
+    }
+
+    .hero {
+        padding-right: 6%;
+        padding-left: 6%;
+        gap: 2rem;
+    }
+
+    .section-pad {
+        padding: 5rem 6%;
+    }
+
+    .menu-grid {
+        gap: 1rem;
+    }
+
+    .about-section {
+        gap: 2.5rem;
+    }
+
+    .contact-layout {
+        gap: 2rem;
+    }
+}
+
+/* 11. Mobile layout */
+
+@media (max-width: 700px) {
+    html {
+        scroll-padding-top: 1rem;
+    }
+
+    .site-header {
+        padding: 1rem 5%;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .main-nav a {
+        padding: 0.4rem 0;
+        font-size: 0.85rem;
+    }
+
+    .theme-toggle {
+        padding: 0.55rem 0.75rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 4rem 6% 3rem;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.2rem, 13vw, 4.5rem);
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .hero-art {
+        width: 100%;
+        min-height: 22rem;
+        max-width: 26rem;
+        justify-self: center;
+    }
+
+    .section-pad {
+        padding: 4rem 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .menu-card {
+        padding: 1rem;
+    }
+
+    .drink-art {
+        min-height: 10rem;
+    }
+
+    .drink-cup {
+        font-size: 4.5rem;
+    }
+
+    .menu-card > p:not(.drink-category) {
+        min-height: auto;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-art {
+        min-height: 20rem;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-form {
+        padding: 1.3rem;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .site-footer {
+        padding: 2.5rem 6% 1.5rem;
+    }
+
+    .footer-nav {
+        gap: 1rem;
+    }
+}
+
+/* 12. Small phone screens */
+
+@media (max-width: 360px) {
+    .main-nav {
+        gap: 0.35rem;
+    }
+
+    .main-nav a {
+        font-size: 0.78rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-art {
+        min-height: 18rem;
+    }
+
+    .coffee-cup {
+        transform: scale(0.8) rotate(-7deg);
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+}
+
+/* 13. Respect reduced motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
